@@ -1,7 +1,5 @@
+import AnniversaryGame from "@/components/AnniversaryGame";
+
 export default function Home() {
-  return (
-    <main>
-      <div>Hello world!</div>
-    </main>
-  );
+  return <AnniversaryGame />;
 }

@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💖 Anniversary Surprise Website
 
-## Getting Started
+เว็บเซอร์ไพรส์วันครบรอบธีมเกมพิกเซล สร้างด้วย **Next.js 16 + React 19**
+รองรับมือถือเต็มรูปแบบ พร้อม deploy บน Vercel ทันที
 
-First, run the development server:
+## 🚀 เริ่มใช้งาน
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+เปิด http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✏️ จุดที่ใช้ปรับแต่ง
 
-## Learn More
+ไฟล์หลักของเวอร์ชันปัจจุบัน:
 
-To learn more about Next.js, take a look at the following resources:
+- `src/components/AnniversaryGame.tsx` — flow หลัก เพลง และเสียงเอฟเฟกต์
+- `src/components/MemoryTimeline.tsx` — หน้าความทรงจำและ SVG ตกแต่ง
+- `src/data/memories.ts` — ข้อความ รูป และ asset ของความทรงจำทั้ง 26 รายการ
+- `src/components/CoupleQuiz.tsx` — คำถามและตัวเลือก Quiz
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🖼 วาง Asset
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| ประเภท | วางที่ | ตัวอย่าง path ใน config |
+|---|---|---|
+| รูปภาพ | `public/images/` | `/images/photo-1.jpg` |
+| วิดีโอ | `public/videos/` | `/videos/for-you.mp4` |
 
-## Deploy on Vercel
+ถ้ายังไม่ใส่ไฟล์ ระบบจะแสดง placeholder สวยๆ บอกตำแหน่งให้อัตโนมัติ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ☁️ Deploy บน Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push โปรเจกต์ขึ้น GitHub
+2. เข้า [vercel.com](https://vercel.com) → **Add New Project** → เลือก repo
+3. กด **Deploy** ได้เลย (ไม่ต้องตั้งค่าอะไรเพิ่ม)
