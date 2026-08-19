@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const RELATIONSHIP_START = new Date("2025-04-19T00:00:00+07:00");
-const COUPLE_PHOTO = "/images/lv.1/IMG_9415.jpg";
+const COUPLE_PHOTO = "/images/lv.1/IMG_9415.jpg?v=20260819";
 
 type Duration = {
   years: number;
