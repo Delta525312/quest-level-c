@@ -30,8 +30,8 @@ export default function VisitorCounter() {
           signal: controller.signal,
         });
         if (!response.ok) return;
-        const data = await response.json() as { count?: unknown };
-        if (typeof data.count === "number") setCount(data.count);
+        const data = await response.json() as { total_visitors?: unknown };
+        if (typeof data.total_visitors === "number") setCount(data.total_visitors);
       } catch {
         // The counter stays unobtrusive when storage or the endpoint is unavailable.
       }
@@ -42,7 +42,7 @@ export default function VisitorCounter() {
   }, []);
 
   return (
-    <div className="visitor-counter" title="จำนวน browser ที่เคยเข้าชม">
+    <div className="visitor-counter" title="จำนวนผู้เข้าชมทั้งหมด โดยนับผู้ใช้เดิมเพียงครั้งเดียว">
       <span aria-hidden="true">♦</span>
       <small>VISITORS</small>
       <strong>{count ?? "--"}</strong>

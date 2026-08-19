@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import couplePhoto from "../../public/images/lv.1/IMG_9415.jpg";
 
 const RELATIONSHIP_START = new Date("2025-04-19T00:00:00+07:00");
-const COUPLE_PHOTO = "/images/lv.1/IMG_9415.jpg?v=20260819";
 
 type Duration = {
   years: number;
@@ -80,15 +80,7 @@ export default function RelationshipCounter() {
           <span className="frame-ring frame-ring--two" aria-hidden="true" />
           <div className="calendar-photo-label"><span aria-hidden="true">♥</span> เจอกันวันแรก <span aria-hidden="true">♥</span></div>
           <div className="photo-window">
-            {COUPLE_PHOTO ? (
-              <Image className="calendar-memory-photo" src={COUPLE_PHOTO} alt="ภาพความทรงจำวันที่เราเจอกันวันแรก" fill sizes="(max-width: 760px) 82vw, 380px" />
-            ) : (
-              <div className="photo-placeholder">
-                <span aria-hidden="true">19 ♥ 04</span>
-                <strong>พื้นที่สำหรับรูปของเรา</strong>
-                <small>วางรูปไว้ใน public/images แล้วใส่ path ที่ COUPLE_PHOTO</small>
-              </div>
-            )}
+            <Image className="calendar-memory-photo" src={couplePhoto} alt="ภาพความทรงจำวันที่เราเจอกันวันแรก" fill sizes="(max-width: 760px) 82vw, 380px" placeholder="blur" />
           </div>
           <div className="calendar-frame-footer"><span>APR</span><strong>19</strong><span>2025</span></div>
         </div>

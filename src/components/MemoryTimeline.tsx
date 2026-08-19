@@ -68,7 +68,10 @@ export default function MemoryTimeline() {
       <ol className="memory-timeline">
         {memories.map((memory, index) => (
           <li className={`memory-entry memory-entry--${index % 2 === 0 ? "left" : "right"} ${memory.image ? "memory-entry--photo" : ""}`} key={memory.id}>
-            <span className="memory-node" aria-hidden="true"><span>{memory.emoji ?? "♥"}</span></span>
+            <span className="memory-node" aria-hidden="true">
+              <span>{memory.emoji ?? "♥"}</span>
+              <b>{String(index + 1).padStart(2, "0")}</b>
+            </span>
             <TimelineSprinkle variant={index} />
             <article className="memory-card">
               <div className={`memory-media ${memory.image ? "memory-media--photo" : ""}`}>
