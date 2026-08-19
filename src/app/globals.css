@@ -468,7 +468,7 @@ button:focus-visible { outline:4px solid #fff; outline-offset:5px; }
   .memory-node { top:0; left:14px; display:flex; width:auto; min-width:155px; height:45px; padding:4px 12px; transform:none; justify-content:center; gap:9px; border-width:4px; box-shadow:4px 4px 0 rgba(81,27,59,.24); }
   .memory-node span { font-size:1.05rem; line-height:1; }
   .memory-node b { display:block; color:#fff; font-size:.75rem; letter-spacing:.04em; }
-  .timeline-sprinkle { top:2px; right:10px; left:auto!important; width:43px; height:35px; opacity:.68; filter:drop-shadow(3px 3px 0 rgba(81,27,59,.14)); }
+  .timeline-sprinkle { top:0; right:10px; left:auto!important; width:48px; height:42px; padding:4px; opacity:.88; background:var(--cream); border:3px solid var(--berry-dark); box-shadow:3px 3px 0 rgba(81,27,59,.22); filter:none; }
   .timeline-sprinkle i { display:none; }
   .memory-entry::after,.memory-entry--left::after,.memory-entry--right::after { top:-27px; left:31px; width:6px; height:31px; background:repeating-linear-gradient(to bottom,var(--berry-dark) 0 8px,var(--pink-400) 8px 15px,#fff0c9 15px 21px); }
   .memory-entry:first-child::after { display:none; }
@@ -523,7 +523,7 @@ button:focus-visible { outline:4px solid #fff; outline-offset:5px; }
   .memory-node { left:10px; min-width:150px; height:40px; padding:3px 9px; gap:7px; border-width:3px; box-shadow:3px 3px 0 rgba(81,27,59,.22); }
   .memory-node span { font-size:.95rem; }
   .memory-node b { font-size:.75rem; }
-  .timeline-sprinkle { right:7px; width:40px; height:33px; opacity:.68; }
+  .timeline-sprinkle { right:7px; width:44px; height:38px; padding:3px; border-width:2px; box-shadow:2px 2px 0 rgba(81,27,59,.22); }
   .memory-entry::after,.memory-entry--left::after,.memory-entry--right::after { top:-24px; left:26px; width:5px; height:27px; }
   .memory-media { height:clamp(220px,76vw,340px); }
   .memory-media--photo { height:auto; aspect-ratio:9/16; }
