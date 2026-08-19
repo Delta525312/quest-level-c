@@ -296,7 +296,6 @@ export default function AnniversaryGame() {
           <button className="asset-button" onClick={openGift} onPointerEnter={() => playSfx("sparkle")} disabled={stage === "opening"} onAnimationEnd={(event) => { if (event.animationName === "gift-open") goTo("flowers"); }} aria-label={text.open}>
             <span className="asset-glow" /><Image src="/images/pixel-gift.png" width={640} height={640} priority alt="กล่องของขวัญพิกเซลสีชมพู" /><span className="tap-label">{text.open}</span>
           </button>
-          {stage === "gift" ? <VisitorCounter /> : null}
         </div>}
 
         {stage === "flowers" && <div className="scene scene--flowers" key="flowers">
@@ -317,6 +316,7 @@ export default function AnniversaryGame() {
         {stage === "timeline" && <MemoryTimeline />}
         {stage === "quiz" && <CoupleQuiz onClick={() => playButtonSfx("shuffle")} onCorrect={() => playButtonSfx("correct")} onWrong={() => playButtonSfx("wrong")} />}
       </section>
+      <VisitorCounter visible={stage === "gift"} />
       <footer className="game-footer"><span>♥</span> Created By Delta <span>♥</span></footer>
     </main>
   );

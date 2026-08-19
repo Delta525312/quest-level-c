@@ -13,7 +13,7 @@ function getVisitorId() {
   return visitorId;
 }
 
-export default function VisitorCounter() {
+export default function VisitorCounter({ visible = true }: { visible?: boolean }) {
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export default function VisitorCounter() {
   }, []);
 
   return (
-    <div className="visitor-counter" title="จำนวนผู้เข้าชมทั้งหมด โดยนับผู้ใช้เดิมเพียงครั้งเดียว">
+    <div className="visitor-counter" hidden={!visible} title="จำนวนผู้เข้าชมทั้งหมด โดยนับผู้ใช้เดิมเพียงครั้งเดียว">
       <span aria-hidden="true">♦</span>
       <small>VISITORS</small>
       <strong>{count ?? "--"}</strong>
