@@ -64,19 +64,23 @@ export default function MemoryTimeline() {
       <p className="quest-badge">LV.03 • MEMORY PATH</p>
       <h1>แกลเลอรี่ความทรงจำ</h1>
       <p className="timeline-intro">เรื่องเล่าของเราที่ค่อย ๆ ต่อกันไปทีละความทรงจำ</p>
+      <div className="mobile-story-bar" aria-hidden="true">
+        <span>♥ STORY LOG</span>
+        <strong>{memories.length} MEMORIES</strong>
+      </div>
 
       <ol className="memory-timeline">
         {memories.map((memory, index) => (
           <li className={`memory-entry memory-entry--${index % 2 === 0 ? "left" : "right"} ${memory.image ? "memory-entry--photo" : ""}`} key={memory.id}>
             <span className="memory-node" aria-hidden="true">
+              <b>MEMORY {String(index + 1).padStart(2, "0")}</b>
               <span>{memory.emoji ?? "♥"}</span>
-              <b>{String(index + 1).padStart(2, "0")}</b>
             </span>
             <TimelineSprinkle variant={index} />
             <article className="memory-card">
               <div className={`memory-media ${memory.image ? "memory-media--photo" : ""}`}>
                 {memory.image ? (
-                  <Image src={memory.image.src} alt={memory.image.alt} fill sizes="(max-width: 760px) 86vw, 430px" />
+                  <Image src={memory.image.src} alt={memory.image.alt} fill sizes="(max-width: 840px) calc(100vw - 42px), 430px" />
                 ) : memory.asset ? (
                   <MemoryAsset type={memory.asset} />
                 ) : null}
