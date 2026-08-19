@@ -93,7 +93,13 @@ async function updateVisitorStore(request: Request, visitorId: string) {
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json() as { visitorId?: unknown };
+    // body อาจมาไม่ครบถ้า request ถูก abort กลางทาง — ตอบ 400 แทนที่จะ crash เป็น 500
+    let body: { visitorId?: unknown };
+    try {
+      body = await request.json() as { visitorId?: unknown };
+    } catch {
+      return Response.json({ error: "Invalid request body" }, { status: 400 });
+    }
     if (typeof body.visitorId !== "string" || !/^[a-zA-Z0-9-]{16,80}$/.test(body.visitorId)) {
       return Response.json({ error: "Invalid visitor id" }, { status: 400 });
     }
